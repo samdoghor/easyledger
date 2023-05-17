@@ -3,6 +3,7 @@ from datetime import datetime
 
 from . import db
 
+
 class JobInvoice(db.Model):
 
     __tablename__ = 'job_invoices'
@@ -14,17 +15,14 @@ class JobInvoice(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, nullable=True)
-    
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
+
     # foreign keys
     client_id = db.Column(db.Integer, db.ForeignKey(
         "clients.id"), nullable=False)
-    
+
     # relationships
     jobs = db.relationship(
         "Job", backref="job_invoices", lazy=True)
     job_expenses = db.relationship(
         "JobExpense", backref="jobs", lazy=True)
-    
-
-    
