@@ -15,12 +15,12 @@ class Service(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, nullable=True)
-    
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
+
    # foreign keys
     job_id = db.Column(db.Integer, db.ForeignKey(
         "jobs.id"), nullable=False)
-    
+
     # relationships
     clients = db.relationship(
         "Client", backref="services", lazy=True)

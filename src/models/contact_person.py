@@ -12,10 +12,10 @@ class ContactPerson(db.Model):
     full_name = db.Column(db.String(), nullable=False)
     email_address = db.Column(db.String(), unique=True, nullable=False)
     phone_number = db.Column(db.String(), nullable=False)
-    
+
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=True)
 
     # foreign keys
     client_id = db.Column(db.Integer, db.ForeignKey(

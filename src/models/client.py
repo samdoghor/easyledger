@@ -16,8 +16,7 @@ class Client(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, nullable=True)
-    
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=True)
 
     # foreign keys
     service_id = db.Column(db.Integer, db.ForeignKey(
@@ -26,7 +25,6 @@ class Client(db.Model):
     # relationships
     contact_persons = db.relationship(
         "ContactPerson", backref="clients", lazy=True)
-    
+
     job_invoices = db.relationship(
         "Job", backref="job_invoices", lazy=True)
-
