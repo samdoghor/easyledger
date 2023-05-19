@@ -1,15 +1,9 @@
 """
-Module: ServiceModel
-
-Module summary: This module represents the Service model class, which corresponds to the 'services' table in the database. It defines the structure and attributes of a service entity, including the name, service code, description, and timestamps for creation and update dates.
-
-The Service model has a foreign key relationship with the Job model, as indicated by the "job_id" attribute. This relationship establishes a link between a service and the job it is associated with.
-
-Additionally, the Service model has a one-to-many relationship with the Client model through the "clients" attribute. This relationship indicates that a service can be associated with multiple clients.
+The model represents a service entity with attributes such as name, service code, and description, associated with jobs through a one-to-many relationship.
 """
 
-
 # imports
+
 from datetime import datetime
 
 from . import db
@@ -32,10 +26,7 @@ class Service(db.Model):
     updated_at = db.Column(
         db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
 
-   # foreign keys
-    job_id = db.Column(db.Integer, db.ForeignKey(
-        "jobs.id"), nullable=False)
-
     # relationships
-    clients = db.relationship(
-        "Client", backref="services", lazy=True)
+
+    jobs = db.relationship(
+        'Job', backref='services', lazy=True)
