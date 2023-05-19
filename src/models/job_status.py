@@ -1,14 +1,9 @@
 """
-Module: JobStatusModel
-
-Module summary: This module represents the JobStatus model class, which corresponds to the 'jobs_statuses' table in the database. It defines the structure and attributes of a job status entity, including the status name and timestamps for creation and update dates.
-
-The JobStatus model has a foreign key relationship with the Job model, as indicated by the "job_id" attribute. This relationship establishes a link between a job status and the job it is associated with.
-
+The model represents a job status entity with attributes such as status, associated with jobs through a many-to-one relationship.
 """
 
-
 # imports
+
 from datetime import datetime
 
 from . import db
@@ -28,7 +23,3 @@ class JobStatus(db.Model):
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
         db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
-
-    # foreign keys
-    job_id = db.Column(db.Integer, db.ForeignKey(
-        "jobs.id"), nullable=False)
