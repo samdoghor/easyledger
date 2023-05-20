@@ -1,5 +1,7 @@
 """
-The model represents a job entity with attributes such as amount, contract number, start and end dates, associated with a client, service, job invoice, payments, job expenses, and job statuses.
+The model represents a job entity with attributes such as amount, contract
+number, start and end dates, associated with a client, service, job invoice,
+payments, job expenses, and job statuses.
 """
 
 # imports
@@ -38,6 +40,9 @@ class Job(db.Model):
 
     job_invoice_id = db.Column(db.Integer, db.ForeignKey(
         'job_invoices.id'), nullable=False)
+
+    jobs_statuse_id = db.Column(db.Integer, db.ForeignKey(
+        'jobs_statuses.id'), nullable=False)
 
     # relationships
 

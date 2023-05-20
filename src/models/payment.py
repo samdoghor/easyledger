@@ -1,5 +1,6 @@
 """
-The model represents a payment entity with attributes such as amount and date, associated with a job through a foreign key reference.
+The model represents a payment entity with attributes such as amount and date,
+associated with a job through a foreign key reference.
 """
 
 # imports
@@ -27,5 +28,4 @@ class Payment(db.Model):
 
     # foreign keys
 
-    job_id = db.Column(db.Integer, db.ForeignKey(
-        'job.id'), nullable=False)
+    job_id = db.Column(db.Integer, db.ForeignKey('jobs.id'), nullable=False)

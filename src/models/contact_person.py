@@ -1,5 +1,7 @@
 """
-The model represents a contact person associated with a client, having attributes such as full name, email address, and phone number, with a foreign key referencing the client they belong to.
+The model represents a contact person associated with a client, having
+attributes such as full name, email address, and phone number, with a foreign
+key referencing the client they belong to.
 """
 
 # imports
@@ -12,7 +14,8 @@ from . import db
 class ContactPerson(db.Model):
 
     """
-    ContactPerson model class representing the 'contact_persons' table in the database.
+    ContactPerson model class representing the 'contact_persons' table in the
+    database.
     """
 
     __tablename__ = 'contact_persons'
@@ -24,7 +27,8 @@ class ContactPerson(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
 
     # foreign keys
 

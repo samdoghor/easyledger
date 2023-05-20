@@ -1,5 +1,6 @@
 """
-The model represents a job expense entity with attributes such as amount and description, associated with a job through a foreign key reference.
+The model represents a job expense entity with attributes such as amount and
+description, associated with a job through a foreign key reference.
 """
 
 # imports
@@ -12,7 +13,8 @@ from . import db
 class JobExpense(db.Model):
 
     """
-    JobExpense model class representing the 'job_expenses' table in the database.
+    JobExpense model class representing the 'job_expenses' table in the
+    database.
     """
 
     __tablename__ = 'job_expenses'
@@ -23,7 +25,8 @@ class JobExpense(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
 
     # foreign keys
 

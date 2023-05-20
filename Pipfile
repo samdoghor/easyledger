@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 autopep8 = "*"
 python-dotenv = "*"
 psycopg2 = "*"
+flask-wtf = "*"
 
 [dev-packages]
 

@@ -1,5 +1,7 @@
 """
-The model represents an income type entity with attributes such as income type name and description, associated with incomes through a many-to-one relationship.
+The model represents an income type entity with attributes such as income type
+name and description, associated with incomes through a many-to-one
+relationship.
 """
 
 # imports
@@ -12,7 +14,8 @@ from . import db
 class IncomeType(db.Model):
 
     """
-    IncomeType model class representing the 'income_types' table in the database.
+    IncomeType model class representing the 'income_types' table in the
+    database.
     """
 
     __tablename__ = 'income_types'

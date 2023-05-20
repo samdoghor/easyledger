@@ -1,8 +1,11 @@
 # imports
+
 import os
+
 from dotenv import load_dotenv
 
 # configurations
+
 load_dotenv()
 
 dbHost = os.getenv('DBHOST')

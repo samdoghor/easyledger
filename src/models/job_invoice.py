@@ -1,5 +1,7 @@
 """
-The model represents a job invoice entity with attributes such as invoice number, issued date, invoice link, associated with a job through a foreign key reference.
+The model represents a job invoice entity with attributes such as invoice
+number, issued date, invoice link, associated with a job through a foreign key
+reference.
 """
 
 # imports
@@ -12,7 +14,8 @@ from . import db
 class JobInvoice(db.Model):
 
     """
-    JobInvoice model class representing the 'job_invoices' table in the database.
+    JobInvoice model class representing the 'job_invoices' table in the
+    database.
     """
 
     __tablename__ = 'job_invoices'
@@ -24,9 +27,5 @@ class JobInvoice(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
-
-    # foreign keys
-
-    job_id = db.Column(db.Integer, db.ForeignKey(
-        'jobs.id'), nullable=False)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
