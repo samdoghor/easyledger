@@ -1,5 +1,7 @@
 """
-The model represents an income entity with attributes such as amount, date, and a foreign key referencing the income type. It is associated with income types through a many-to-one relationship.
+The model represents an income entity with attributes such as amount, date,
+and a foreign key referencing the income type. It is associated with income
+types through a many-to-one relationship.
 """
 
 # imports
@@ -23,7 +25,8 @@ class Income(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
 
     # foreign keys
 

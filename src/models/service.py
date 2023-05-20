@@ -1,5 +1,6 @@
 """
-The model represents a service entity with attributes such as name, service code, and description, associated with jobs through a one-to-many relationship.
+The model represents a service entity with attributes such as name, service
+code, and description, associated with jobs through a one-to-many relationship.
 """
 
 # imports
@@ -24,7 +25,8 @@ class Service(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
 
     # relationships
 

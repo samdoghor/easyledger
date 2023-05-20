@@ -1,5 +1,7 @@
 """
-The model represents an expense entity with attributes such as amount, date, and a foreign key referencing the expense type. It is associated with expense types through a many-to-one relationship.
+The model represents an expense entity with attributes such as amount, date,
+and a foreign key referencing the expense type. It is associated with expense
+types through a many-to-one relationship.
 """
 
 # imports
@@ -23,7 +25,8 @@ class Expense(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
 
     # foreign keys
 

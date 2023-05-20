@@ -1,5 +1,6 @@
 """
-The model represents a job status entity with attributes such as status, associated with jobs through a many-to-one relationship.
+The model represents a job status entity with attributes such as status,
+associated with jobs through a many-to-one relationship.
 """
 
 # imports
@@ -12,7 +13,8 @@ from . import db
 class JobStatus(db.Model):
 
     """
-    JobStatus model class representing the 'jobs_statuses' table in the database.
+    JobStatus model class representing the 'jobs_statuses' table in the
+    database.
     """
 
     __tablename__ = 'jobs_statuses'
@@ -22,4 +24,5 @@ class JobStatus(db.Model):
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_at = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,  nullable=True)
+        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow,
+        nullable=True)
