@@ -2,11 +2,11 @@
 
 from flask import Blueprint, Flask
 from flask_migrate import Migrate
+from flask_wtf.csrf import CSRFProtect
 
 import config
 import routes
 from models import db
-from flask_wtf.csrf import CSRFProtect
 
 # configurations
 

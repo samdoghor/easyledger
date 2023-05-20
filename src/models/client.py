@@ -10,6 +10,8 @@ from datetime import datetime
 
 from . import db
 
+# pylint: disable=R0903
+
 
 class Client(db.Model):
 
