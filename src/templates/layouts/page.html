@@ -14,51 +14,74 @@
 <body>
    <div class="overflow-x-hidden">
 
-      <div class="row">
+      <div class="">
 
-         <div class="col-1 sidebar">
+         <div class="sidebar">
             <ul>
                <li class="logo">
-                  <a href="#">
-                     <span class="icon"><i class="fa-solid fa-house"></i></span>
-                     <span class="text"> Home </span>
+                  <a>
+                     <span class="icon"><i class="fa-solid fa-arrows-left-right-to-line"></i></span>
+                     <span class="text"> Drawer </span>
                   </a>
                </li>
                <li>
                   <a href="#">
-                     <span class="icon"><i class="fa-solid fa-gauge"></i></i></span>
+                     <span class="icon"><i class="fa-sharp fa-solid fa-square-poll-vertical"></i></span>
                      <span class="text"> Dashboard </span>
                   </a>
                </li>
                <li>
-                  <a href="#">
-                     <span class="icon"><i class="fa-solid fa-briefcase"></i></span>
+                  <a href="{{url_for('client.client_index')}}">
+                     <span class=" icon"><i class="fa-solid fa-people-group"></i></i></span>
                      <span class="text"> Clients </span>
                   </a>
                </li>
                <li>
                   <a href="#">
-                     <span class="icon"><i class="fa-solid fa-money-bill"></i></span>
+                     <span class="icon"><i class="fa-solid fa-folder-tree"></i></span>
+                     <span class="text"> Jobs </span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <span class="icon"><i class="fa-solid fa-arrows-up-to-line"></i></span>
+                     <span class="text"> Expenses </span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <span class="icon"><i class="fa-solid fa-arrows-down-to-line"></i></span>
+                     <span class="text"> Income </span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                     <span class="icon"><i class="fa-solid fa-comment-dollar"></i></span>
                      <span class="text"> Income Statement </span>
                   </a>
                </li>
                <li>
                   <a href="#">
-                     <span class="icon"><i class="fa-sharp fa-solid fa-check-to-slot"></i></span>
+                     <span class="icon"><i class="fa-solid fa-money-bill-transfer"></i></span>
                      <span class="text"> Cash Flow Statement </span>
                   </a>
                </li>
                <li>
                   <a href="#">
-                     <span class="icon"><i class="fa-solid fa-vault"></i></span>
+                     <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
                      <span class="text"> Balance Sheets </span>
                   </a>
                </li>
             </ul>
          </div>
 
-         <div class="col-11">
-            <div class="container text-white">
+         <div class="contentside">
+            <div class="bg-black">
+               <div class="container-fluid contentside-container">
+                  Top Menu
+               </div>
+            </div>
+            <div class="container-fluid contentside-container">
                {% block content %} {% endblock %}
             </div>
          </div>
