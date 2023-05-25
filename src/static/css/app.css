@@ -6,7 +6,11 @@
   
 body {
    min-height: 100vh;
-   background-color: #1A1D21;
+   background-color: #14161b;
+}
+
+a, a:link, a:visited, a:active, a:hover, i {
+   text-decoration: none;
 }
 
 .sidebar {
@@ -23,6 +27,7 @@ body {
    margin-left: 60px;
    max-width: 100%;
    transition: 0.5s;
+   color: #ffffff;
 }
 
 .sidebar:hover {
@@ -58,6 +63,10 @@ body {
    padding-right: 2%;
 }
 
+.contentside-container-top {
+   padding-top: 1%;
+}
+
 .sidebar ul {
    position: relative;
    height: 100vh;
@@ -80,9 +89,9 @@ body {
    color: #ffffff;
 }
 
-/* .sidebar ul li a:active {
+.sidebar ul li.active-nav-link a {
    color: #ffffff;
-} */
+}
 
 .sidebar ul li a .icon {
    position: relative;
@@ -91,7 +100,7 @@ body {
    align-items: center;
    min-width: 60px;
    height: 60px;
-   font-size: 1.2em;
+   font-size: 1em;
 }
 
 .sidebar ul li a .text {
@@ -99,7 +108,7 @@ body {
    height: 60px;
    display: flex;
    align-items: center;
-   font-size: 0.75em;
+   font-size: 0.8em;
    text-transform: uppercase;
    letter-spacing: 0.05em;
    font-weight: 600;
@@ -125,4 +134,3 @@ body {
    font-size: 0.8em;
    font-weight: 500;
 }
-
