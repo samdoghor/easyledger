@@ -10,21 +10,37 @@
 .el-text-white:hover a {
    color: #999999;
 }
-.el-text-grey {
+.el-text-gr-1 {
    color: #09f577;
 }
+.el-text-bl-1 {
+   color: #242E5D;
+}
 
+
+.el-font-xs-1 {
+   font-size: .6em;
+}
+.el-font-xs-2 {
+   font-size: .8em;
+}
 .el-font-s-1 {
    font-size: 1em;
 }
 .el-font-s-2 {
    font-size: 1.2em;
 }
-.el-font-xs-1 {
-   font-size: .6em;
+.el-font-s-3 {
+   font-size: 1.4em;
 }
-.el-font-xs-2 {
-   font-size: .8em;
+.el-font-s-4 {
+   font-size: 1.6em;
+}
+.el-font-s-5 {
+   font-size: 1.8em;
+}
+.el-font-s-6 {
+   font-size: 2em;
 }
 
 .el-letter-sp-1 {
@@ -64,6 +80,11 @@ li.el-text-white p {
 .el-bg-grids {
    background-color: #2B2E3B;
 }
+.el-card-grids {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
 
 ul.el-bg-grids li a {
    color: #ffffff;
@@ -80,4 +101,12 @@ ul.el-bg-grids li a {
    border-color: #242E5D;
    border-width: 10px;
    border-style: solid;
+}
+.el-border-s-1.el-border-bg-s-1 {
+   background-color: #242E5D;
+   color: #ffffff;
+}
+
+.el-cursor-pointer:hover{
+   cursor: pointer;
 }
