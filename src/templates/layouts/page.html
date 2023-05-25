@@ -9,6 +9,7 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    <link href="/static/css/app.css" rel="stylesheet">
+   <link href="/static/css/page.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,50 +25,50 @@
                      <span class="text"> Drawer </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_1 %}{% endblock %}">
+                  <a href="{{url_for('dashboard.dashboard_index')}}">
                      <span class="icon"><i class="fa-sharp fa-solid fa-square-poll-vertical"></i></span>
                      <span class="text"> Dashboard </span>
                   </a>
                </li>
-               <li>
+               <li class="{% block active_nav_link_2 %}{% endblock %}">
                   <a href="{{url_for('client.client_index')}}">
                      <span class=" icon"><i class="fa-solid fa-people-group"></i></i></span>
                      <span class="text"> Clients </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_3 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-folder-tree"></i></span>
                      <span class="text"> Jobs </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_4 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-arrows-up-to-line"></i></span>
                      <span class="text"> Expenses </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_5 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-arrows-down-to-line"></i></span>
                      <span class="text"> Income </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_6 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-comment-dollar"></i></span>
                      <span class="text"> Income Statement </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_7 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-money-bill-transfer"></i></span>
                      <span class="text"> Cash Flow Statement </span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
+               <li class="{% block active_nav_link_8 %}{% endblock %}">
+                  <a href=" #">
                      <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
                      <span class="text"> Balance Sheets </span>
                   </a>
@@ -81,7 +82,7 @@
                   Top Menu
                </div>
             </div>
-            <div class="container-fluid contentside-container">
+            <div class="container-fluid contentside-container contentside-container-top">
                {% block content %} {% endblock %}
             </div>
          </div>
@@ -95,6 +96,7 @@
       crossorigin="anonymous"></script>
 
    <script src="https://kit.fontawesome.com/24efd953d6.js" crossorigin="anonymous"></script>
+   <script src="/static/js/page.js"></script>
 
 </body>
 

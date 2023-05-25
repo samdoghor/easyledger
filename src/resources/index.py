@@ -1,4 +1,4 @@
-""" 
+"""
 This module defines the resource for the index page
 """
 

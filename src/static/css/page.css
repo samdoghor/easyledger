@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+.el-font-choice-1 {
+   font-family: 'Open Sans', sans-serif;
+}
+
+.el-text-white a {
+   color: #ffffff;
+}
+.el-text-white:hover a {
+   color: #999999;
+}
+.el-text-grey {
+   color: #09f577;
+}
+
+.el-font-s-1 {
+   font-size: 1em;
+}
+.el-font-s-2 {
+   font-size: 1.2em;
+}
+.el-font-xs-1 {
+   font-size: .6em;
+}
+.el-font-xs-2 {
+   font-size: .8em;
+}
+
+.el-letter-sp-1 {
+   letter-spacing: .15em;
+}
+.el-letter-sp-2 {
+   font-size: .2em;
+}
+
+ul {
+   padding: 0;
+}
+ul.el-text-white {
+   list-style: none;
+}
+li.el-text-white {
+   display: inline-flex;
+}
+li.el-text-white p {
+   cursor: pointer;
+}
+
+.el-tab-active {
+   display: block;
+   transition: 1s;
+}
+
+.el-tab-inactive {
+   display: none;
+   transition: 1s;
+}
+
+.el-bg-pills {
+   background-color: #242E5D;
+}
+
+.el-bg-grids {
+   background-color: #2B2E3B;
+}
+
+ul.el-bg-grids li a {
+   color: #ffffff;
+}
+
+.el-rounded-full {
+   border-radius: 50%;
+   object-fit: cover;
+   width: 150px; 
+   height: 150px; 
+}
+
+.el-border-s-1 {
+   border-color: #242E5D;
+   border-width: 10px;
+   border-style: solid;
+}

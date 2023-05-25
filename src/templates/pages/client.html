@@ -2,8 +2,73 @@
 
 {% block title %} Clients - Easy Ledger {% endblock %}
 
+{% block active_nav_link_2 %}active-nav-link{% endblock %}
+
 {% block content %}
 
-Hello My name is Samuel, Doghor Destiny
+<div>
+   <div class="row">
+      <div class="col-6 el-font-s-2 text-start">
+         <ul>
+            <li class="el-text-white pe-3" id="client-grid-btn">
+               <p class="" href=""> <i class="fa-solid fa-table-columns"></i>
+                  Grid
+               </p>
+            </li>
+            <li class="el-text-white pe-3" id="client-list-btn">
+               <p class="" href=""> <i class="fa-solid fa-list"></i> List </p>
+            </li>
+         </ul>
+      </div>
+      <div class="col-6 text-end">
+         <a href="{{url_for('client.client_index')}}" class="text-white el-font-choice-1 el-letter-sp-1">
+            easyledger{{url_for('client.client_index')}}
+         </a>
+      </div>
+   </div>
+
+   <div class="container-fluid pt-2">
+      <div id="client-grid-tab" class="el-tab-active">
+         <div class="badge el-bg-pills el-font-s-1">
+            <span>Grid View</span>
+         </div>
+         <div class="row pt-4">
+            <div class="col-md-4">
+               <div class="rounded-3 el-bg-grids p-3 ps-5 pe-5">
+                  <div class="w-100 text-end dropstart pb-2">
+                     <i class="fa-solid fa-ellipsis el-font-s-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                     <ul class="dropdown-menu dropdown-menu-end el-bg-grids">
+                        <li><a class="dropdown-item" href="#">View</a></li>
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                     </ul>
+                  </div>
+                  <div class="w-100 d-flex justify-content-center pb-4">
+                     <img src="/static/img/doghor.jpg" class="img-fluid el-rounded-full el-border-s-1"
+                        alt="client logo">
+                  </div>
+                  <div class="text-center pb-2 el-font-s-2">
+                     <p> Franklin International Business School </p>
+                     <p class="el-font-xs-2 el-text-grey"> has 1 rep(s) </p>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6 text-start">
+                        <a><i class="fa-solid fa-phone"></i> Call </a>
+                     </div>
+                     <div class="col-md-6 text-end">
+                        <a><i class="fa-solid fa-envelope"></i> Email </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="client-list-tab" class="el-tab-inactive">
+         <div class="badge el-bg-pills el-font-s-1">
+            <span>List View</span>
+         </div>
+      </div>
+   </div>
+</div>
 
 {% endblock %}
