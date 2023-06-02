@@ -42,7 +42,26 @@
                </div>
             </div>
             <div class="el-font-s-1 col-md-6 col-lg-4 text-md-end pt-2 pb-2">
-               <button type="button" class="btn btn-success">Add New Client <i class="fa-solid fa-plus"></i> </button>
+               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addClient"> Add
+                  New Client <i class="fa-solid fa-plus"></i> </button>
+
+               <div class="modal fade" id="addClient" tabindex="-1" aria-labelledby="addClientLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                     <div class="modal-content el-bg-modals">
+                        <div class="modal-header">
+                           <h1 class="modal-title fs-5" id="exampleModalLabel"> Add a New Client </h1>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           ...
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Cancel </button>
+                           <button type="button" class="btn btn-success"> Add </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
          <div class="row pt-4">

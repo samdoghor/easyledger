@@ -85,6 +85,9 @@ li.el-text-white p {
    flex-direction: column;
    height: 100%;
 }
+.el-bg-modals {
+   background-color: #0b0c0e;
+}
 
 ul.el-bg-grids li a {
    color: #ffffff;
