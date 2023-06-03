@@ -25,7 +25,7 @@ class Client(db.Model):
     name = db.Column(db.String(), nullable=False)
     address = db.Column(db.Text())
     email_address = db.Column(db.String(), unique=True, nullable=True)
-    phone_number = db.Column(db.String(), nullable=True)
+    phone_number = db.Column(db.String(), unique=True, nullable=True)
     registration_number = db.Column(db.String(), unique=True, nullable=True)
     client_logo = db.Column(db.String(), nullable=True)
 

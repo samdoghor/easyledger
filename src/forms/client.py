@@ -1,12 +1,12 @@
 """
-This module defines all forms needed by the clients 
+This module defines all forms needed by the clients
 """
 # imports
 
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField
 from wtforms import IntegerField, StringField, TextAreaField, SubmitField
-from wtforms.validators import DataRequired, Email
+from wtforms.validators import DataRequired
 
 # forms
 
@@ -17,7 +17,7 @@ class CreateClientForm(FlaskForm):
 
     name = StringField('Name', validators=[DataRequired()])
     address = TextAreaField('Address')
-    email_address = StringField('Email Address', validators=[Email()])
+    email_address = StringField('Email Address')
     phone_number = IntegerField('Phone Number')
     registration_number = StringField('Registration Numeber')
     client_logo = FileField('Logo', validators=[FileAllowed(
