@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# pylint: disable=E501
+
 dbHost = os.getenv('DBHOST')
 dbPort = os.getenv('DBPORT')
 dbUsername = os.getenv('DBUSERNAME')
@@ -23,3 +25,5 @@ appHost = os.getenv('APPHOST')
 appPort = os.getenv('APPPORT')
 
 environment = os.getenv('ENVIRONMENT')
+
+secretKey = os.getenv('SECRETKEY')
