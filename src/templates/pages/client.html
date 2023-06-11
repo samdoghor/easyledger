@@ -28,6 +28,9 @@
    </div>
 
    <div class="container-fluid pt-2">
+
+      <!-- Grid View -->
+
       <div id="client-grid-tab" class="el-tab-active">
          <div class="row">
             <div class="col-md-6 col-lg-4 pt-2 pb-2">
@@ -45,19 +48,77 @@
                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addClient"> Add
                   New Client <i class="fa-solid fa-plus"></i> </button>
 
-               <div class="modal fade" id="addClient" tabindex="-1" aria-labelledby="addClientLabel" aria-hidden="true">
+               <!-- Add New Client Modal -->
+
+               <div class="modal fade p-2" id="addClient" tabindex="-1" aria-labelledby="addClientLabel"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                      <div class="modal-content el-bg-modals">
-                        <div class="modal-header">
-                           <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="fa-solid fa-plus"></i> Add a
-                              New Client </h1>
+                        <div class="modal-header border-0">
+                           <h1 class="modal-title fs-5" id="addClientModalLabel"> Add a New Client </h1>
                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                               aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                           ...
+                        <div class="modal-body border-0 text-start">
+                           <p> Please ensure all information provided are correct and are company's information not
+                              individual information except where company does not have that information required. </p>
+
+                           <!-- Add new client Form -->
+
+                           <form class="needs-validation" novalidate action="/pages/Clients/#addClient" method="post">
+                              {{ new_client.hidden_tag() }}
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="Easyledger" required>
+                                 <label for="floatingInput" class="text-dark"> Full Legal Name</label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="email" class="form-control" id="floatingInput" required
+                                    placeholder="info@easyleder.com">
+                                 <label for="floatingInput" class="text-dark"> Email Address</label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="email" class="form-control" id="floatingInput" required
+                                    placeholder="+234 907 582 0497">
+                                 <label for="floatingInput" class="text-dark"> Phone Number</label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="RC:12345">
+                                 <label for="floatingInput" class="text-dark"> Registration Number</label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="#5 Osuji Close">
+                                 <label for="floatingInput" class="text-dark"> Street Name/Number </label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="Port Harcourt">
+                                 <label for="floatingInput" class="text-dark"> City </label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="Rivers">
+                                 <label for="floatingInput" class="text-dark"> State </label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="Nigeria">
+                                 <label for="floatingInput" class="text-dark"> Country </label>
+                              </div>
+                              <div class="form-floating mb-3 form-control-sm">
+                                 <input type="text" class="form-control" id="floatingInput" required
+                                    placeholder="500272">
+                                 <label for="floatingInput" class="text-dark"> Zip Code </label>
+                              </div>
+                              <div class="mb-3">
+                                 <label for="formFile" class="form-label"> Client Logo </label>
+                                 <input class="form-control form-control-lg" type="file" id="formFile">
+                              </div>
+                           </form>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer border-0">
                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Cancel <i
                                  class="fa-solid fa-ban"></i> </button>
                            <button type="button" class="btn btn-success"> Add <i class="fa-solid fa-plus"></i> </button>
@@ -67,6 +128,9 @@
                </div>
             </div>
          </div>
+
+         <!-- View all Clients -->
+
          <div class="row pt-4">
             {% for client in clients %}
             <div class="col-md-6 col-lg-4 pt-4">
@@ -116,6 +180,9 @@
             {% endfor %}
          </div>
       </div>
+
+      <!-- List View -->
+
       <div id="client-list-tab" class="el-tab-inactive">
          <div class="">
             <button type="button" disabled class="btn el-bg-pills el-font-s-2 text-white"> List View </button>

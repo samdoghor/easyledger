@@ -23,10 +23,14 @@ class Client(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
-    address = db.Column(db.Text())
     email_address = db.Column(db.String(), unique=True, nullable=True)
     phone_number = db.Column(db.String(), unique=True, nullable=True)
     registration_number = db.Column(db.String(), unique=True, nullable=True)
+    street_name = db.Column(db.String(), nullable=False)
+    city = db.Column(db.String(), nullable=False)
+    state = db.Column(db.String(), nullable=False)
+    country = db.Column(db.String(), nullable=False)
+    zipcode = db.Column(db.Integer(), nullable=False)
     client_logo = db.Column(db.String(), nullable=True)
 
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)

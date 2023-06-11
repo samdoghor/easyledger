@@ -10,7 +10,11 @@ from models import db
 
 # configurations
 
+# pylint: disable=E501
+
 server = Flask(__name__)
+
+server.config['SECRET_KEY'] = config.secretKey
 
 server.config['SQLALCHEMY_DATABASE_URI'] = config.SQLALCHEMY_DATABASE_URI
 server.config['SQLALCHEMY_MODIFICATIONS_TRACKS'] = config.SQLALCHEMY_MODIFICATIONS_TRACKS
@@ -18,7 +22,9 @@ server.config['SQLALCHEMY_MODIFICATIONS_TRACKS'] = config.SQLALCHEMY_MODIFICATIO
 db.init_app(server)
 db.app = (server)
 migrate = Migrate(server, db)
+WTF_CSRF_SECRET_KEY = config.secretKey
 csrf = CSRFProtect(server)
+
 
 for blueprint in vars(routes).values():
     if isinstance(blueprint, Blueprint):
