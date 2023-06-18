@@ -27,7 +27,12 @@ class ClientResource:
 
         clients = Client.query.order_by(Client.name.asc()).all()
 
+        return render_template('pages/client/client.html', clients=clients)
+
+    def client_add():
+        """ Client Homepage """
+
         new_client = CreateClientForm()
 
-        return render_template('pages/client.html', clients=clients,
+        return render_template('pages/client/client_add.html',
                                new_client=new_client)

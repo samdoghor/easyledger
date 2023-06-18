@@ -1,1 +1,1 @@
-from .client import CreateClientForm
+from .client import CreateClientForm, DeleteClientForm

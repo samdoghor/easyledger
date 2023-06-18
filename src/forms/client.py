@@ -26,4 +26,11 @@ class CreateClientForm(FlaskForm):
     zipcode = StringField('Zipcode')
     client_logo = FileField('Logo', validators=[FileAllowed(
         ['jpg', 'png'], 'JPG & PNG Formats Only!')])
-    submit = SubmitField('Add New Client')
+    create_client = SubmitField('Add New Client')
+
+
+class DeleteClientForm(FlaskForm):
+
+    """ This class is use to create new clients """
+
+    delete_client = SubmitField('Yes')
