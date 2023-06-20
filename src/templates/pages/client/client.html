@@ -7,36 +7,28 @@
 {% block content %}
 
 <div>
-   <div class="row">
-      <div class="col-4 el-font-s-2 text-start">
-         <ul>
-            <li class="el-text-white pe-3" id="client-grid-btn">
-               <p class="" href=""> <i class="fa-solid fa-table-columns"></i>
-                  Grid
-               </p>
-            </li>
-            <li class="el-text-white pe-3" id="client-list-btn">
-               <p class="" href=""> <i class="fa-solid fa-list"></i> List </p>
-            </li>
-         </ul>
-      </div>
-      <div class="col-8 text-end">
-         <a href="{{url_for('client.client_index')}}" class="text-white el-font-choice-1 el-letter-sp-1">
-            easyledger{{url_for('client.client_index')}}
-         </a>
-      </div>
-   </div>
 
    <div class="container-fluid pt-2">
 
       <!-- Grid View -->
 
       <div id="client-grid-tab" class="el-tab-active">
-         <div class="row">
-            <div class="col-md-6 col-lg-4 pt-2 pb-2">
-               <button type="button" disabled class="btn el-bg-pills el-font-s-2 text-white"> Grid View </button>
+         <div class="row ps-5 pe-5">
+            <div class="col-md-3 pt-2 pb-2">
+               <div class="w-100 text-start dropstart pb-2">
+                  <span class="el-font-s-2 el-cursor-pointer" data-bs-toggle="dropdown" aria-expanded="false">
+                     Sort
+                     <i class="fa-solid fa-sort ps-2"></i>
+                  </span>
+                  <ul class="dropdown-menu dropdown-menu-end el-bg-grids">
+                     <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-arrow-down-a-z"></i> By Name</a></li>
+                     <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-calendar-days"></i> By Date
+                           Added </a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div class="el-font-s-1 col-md-6 col-lg-4 pt-2 pb-2">
+            <div class="el-font-s-1 col-md-6 pt-2 pb-2">
                <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default"> <i
                         class="fa-solid fa-magnifying-glass"></i> </span>
@@ -44,17 +36,17 @@
                      aria-describedby="inputGroup-sizing-default">
                </div>
             </div>
-            <div class="el-font-s-1 col-md-6 col-lg-4 text-md-end pt-2 pb-2">
-               <a href="{{url_for('client.client_add')}}" type="button" class="btn btn-success"> Add
+            <div class="el-font-s-1 col-md-3 text-md-end pt-2 pb-2">
+               <a href="#" type="button" class="btn btn-success"> Add
                   New Client <i class="fa-solid fa-plus"></i> </a>
             </div>
          </div>
 
          <!-- View all Clients -->
 
-         <div class="row pt-4">
+         <div class="row p-4">
             {% for client in clients %}
-            <div class="col-md-6 col-lg-4 pt-4">
+            <div class="col-md-6 col-lg-4 p-4" id="{{client.id}}">
                <div class="rounded-3 el-bg-grids p-3 ps-5 pe-5 el-card-grids">
                   <div class="w-100 text-end dropstart pb-2">
                      <i class="fa-solid fa-ellipsis el-font-s-2 el-cursor-pointer" data-bs-toggle="dropdown"
@@ -100,14 +92,7 @@
             </div>
             {% endfor %}
          </div>
-      </div>
 
-      <!-- List View -->
-
-      <div id="client-list-tab" class="el-tab-inactive">
-         <div class="">
-            <button type="button" disabled class="btn el-bg-pills el-font-s-2 text-white"> List View </button>
-         </div>
       </div>
    </div>
 </div>
