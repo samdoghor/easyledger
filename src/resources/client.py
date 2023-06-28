@@ -1,10 +1,11 @@
 """
 This Resource controls all Client Resources/
 Creation of new client
-Deletion of new client
+Deletion of client
 Search and Sort of client
 Update an existing client information
 View all clients
+View one client
 """
 
 
@@ -21,9 +22,18 @@ class ClientResource:
 
     # pylint: disable=E0211
 
-    def client_index():
-        """ Client Homepage """
+    def client_view_all_grid():
+        """ View all client in grid form """
 
         clients = Client.query.order_by(Client.name.asc()).all()
 
-        return render_template('pages/client/client.html', clients=clients)
+        return render_template('pages/client/client-grid.html',
+                               clients=clients)
+
+    def client_view_all_list():
+        """ View all client in grid form """
+
+        clients = Client.query.order_by(Client.name.asc()).all()
+
+        return render_template('pages/client/client-list.html',
+                               clients=clients)
