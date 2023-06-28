@@ -4,6 +4,7 @@
    font-family: 'Open Sans', sans-serif;
 }
 
+/* Font Colours */
 .el-text-white a {
    color: #ffffff;
 }
@@ -17,12 +18,15 @@
    color: #242E5D;
 }
 
-
+/* Font Sizes */
 .el-font-xs-1 {
    font-size: .6em;
 }
 .el-font-xs-2 {
    font-size: .8em;
+}
+.el-font-xs-3 {
+   font-size: .9em;
 }
 .el-font-s-1 {
    font-size: 1em;
@@ -43,6 +47,7 @@
    font-size: 2em;
 }
 
+/* Font Sapcing */
 .el-letter-sp-1 {
    letter-spacing: .15em;
 }
@@ -50,6 +55,38 @@
    font-size: .2em;
 }
 
+
+/* Borders */
+.el-border-s-1 {
+   border-color: #242E5D;
+   border-width: 6px;
+   border-style: solid;
+}
+.el-border-s-1.el-border-bg-s-1 {
+   background-color: #242E5D;
+   color: #ffffff;
+}
+.el-border-t-1 {
+   border-color: #1b1b1f;
+}
+
+.el-cursor-pointer:hover{
+   cursor: pointer;
+}
+
+/* Background Colours */
+.el-success-dark {
+   background-color: #115837;
+   color: white;
+   transition: 0.8s;
+}
+
+.el-success-dark:hover {
+   background-color: #093320;
+   transition: 0.8s;
+}
+
+/* Others */
 ul {
    padding: 0;
 }
@@ -78,7 +115,10 @@ li.el-text-white p {
 }
 
 .el-bg-grids {
-   background-color: #2B2E3B;
+   background-color: rgb(13, 13, 19);
+}
+.el-bg-grids:hover {
+   background-color: rgb(15, 15, 17);
 }
 .el-card-grids {
    display: flex;
@@ -96,20 +136,12 @@ ul.el-bg-grids li a {
 .el-rounded-full {
    border-radius: 50%;
    object-fit: cover;
-   width: 150px; 
-   height: 150px; 
+   width: 80px; 
+   height: 80px; 
 }
-
-.el-border-s-1 {
-   border-color: #242E5D;
-   border-width: 10px;
-   border-style: solid;
-}
-.el-border-s-1.el-border-bg-s-1 {
-   background-color: #242E5D;
-   color: #ffffff;
-}
-
-.el-cursor-pointer:hover{
-   cursor: pointer;
+.el-rounded-full-s {
+   border-radius: 50%;
+   object-fit: cover;
+   width: 30px; 
+   height: 30px; 
 }

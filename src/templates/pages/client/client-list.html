@@ -1,0 +1,200 @@
+{% extends 'layouts/page.html' %}
+
+{% block title %} Clients - Easy Ledger {% endblock %}
+
+{% block active_nav_link_2 %}active-nav-link{% endblock %}
+
+{% block content %}
+
+<div>
+
+   <div class="container-fluid pt-2">
+
+      <!-- List View -->
+
+      <div id="client-grid-tab" class="el-tab-active">
+         <div class="row ps-5 pe-5">
+            <div class="el-font-s-1 col-md-3 text-md-start pt-2 pb-2">
+               <a href="#" type="button" class="btn el-success-dark"> Add
+                  New Client <i class="fa-solid fa-plus"></i> </a>
+            </div>
+            <div class="el-font-s-1 col-md-6 pt-2 pb-2">
+               <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"> <i
+                        class="fa-solid fa-magnifying-glass"></i> </span>
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                     aria-describedby="inputGroup-sizing-default">
+               </div>
+            </div>
+            <div class="col-md-3 pt-2 pb-2">
+               <div class="w-100 text-end pb-2">
+                  <div class="row">
+                     <div class="col-6 dropend-center ">
+                        <span class="el-font-s-2 el-cursor-pointer el-font-s-1" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                           Sort
+                           <i class="fa-solid fa-sort ps-2 el-font-s-1"></i>
+                        </span>
+                        <ul class="dropdown-menu dropdown-menu-end el-bg-grids">
+                           <li><a class="dropdown-item el-font-xs-3 text-start" href="#"> <i
+                                    class="fa-solid fa-arrow-down-a-z el-font-s-1 pe-2"></i> By
+                                 Name</a></li>
+                           <li><a class="dropdown-item el-font-xs-3 text-start" href="#"> <i
+                                    class="fa-solid fa-calendar-days el-font-s-1 pe-2"></i> By
+                                 Date
+                                 Added </a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="col-6 dropend-center ">
+                        <span class="el-font-s-2 el-cursor-pointer el-font-s-1" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                           View
+                           <i class="fa-solid fa-expand ps-2 el-font-s-1"></i>
+                        </span>
+                        <ul class="dropdown-menu dropdown-menu-end el-bg-grids">
+                           <li><a class="dropdown-item el-font-xs-3" href="{{url_for('client.client_view_all_grid')}}">
+                                 <i class="fa-solid fa-border-all"></i>
+                                 Grid View </a></li>
+                           <li><a class="dropdown-item el-font-xs-3" href="{{url_for('client.client_view_all_list')}}">
+                                 <i class="fa-solid fa-list"></i> List
+                                 View </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- View all Clients -->
+         <style>
+            .hidden-column {
+               display: none;
+            }
+         </style>
+         <div class="row p-xl-4">
+            <table class="table text-white w-100 el-border-t-1" id="myTable">
+               <tr class="border-bottom-1">
+                  <th class="col hidden-column">id</th>
+                  <th class="col"></th>
+                  <th class="col">Name</th>
+                  <th class="col">Email Address</th>
+                  <th class="col">Phone Number</th>
+                  <th class="col">Rep(s)</th>
+                  <th class="col">Action</th>
+               </tr>
+
+               {% for client in clients %}
+               <tr>
+                  <td class="col hidden-column">{{client.id}}</td>
+                  <td class="col">
+                     {% if client.client_logo==None %}
+                     <span
+                        class="d-flex align-items-center justify-content-center el-rounded-full-s text-center bg-white el-font-xs-2 fw-bold el-text-bl-1">
+                        {{client.name[:2].upper()}}
+                     </span>
+                     {% else %}
+                     <span>
+                        <img src="{{client.client_logo}}" class="img-fluid el-rounded-full-s" alt="client logo">
+                        {% endif %}
+                     </span>
+                  </td>
+                  <td class="col">{{client.name}}</td>
+                  <td class="col">
+                     {% if client.email_address==None %}
+                     <p class="text-white el-font-s-1"> No email address found </p>
+                     {% else %}
+                     <a href="mailto:{{client.email_address}}" class="text-white el-cursor-pointer el-font-s-1"><i
+                           class="fa-solid fa-envelope el-font-s-1 pe-2"></i> {{client.email_address}}
+                     </a>
+                     {% endif %}
+                  </td>
+                  <td class="col">
+                     {% if client.phone_number==None %}
+                     <p class="text-white el-font-s-1"> No phone number found </p>
+                     {% else %}
+                     <a href="mailto:{{client.phone_number}}" class="text-white el-cursor-pointer el-font-s-1"><i
+                           class="fa-solid fa-phone el-font-s-1 pe-2"></i> {{client.phone_number}}
+                     </a>
+                     {% endif %}
+                  </td>
+                  <td class="col">1</td>
+                  <td class="col">
+                     <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                        data-bs-title="View ({{client.name}})"><a class="el-font-xs-3 ps-1 pe-1" href="#"> <i
+                              class="fa-solid fa-eye"></i></a></span>
+                     <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Edit ({{client.name}})"><a class="el-font-xs-3 ps-1 pe-1" href="#"> <i
+                              class="fa-solid fa-pen-to-square"></i></a></span>
+                     <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Delete ({{client.name}})"><a class="el-font-xs-3 ps-1 pe-1" href="#"> <i
+                              class="fa-solid fa-trash"></i></a>
+                     </span>
+                  </td>
+
+               </tr>
+               {% endfor %}
+            </table>
+         </div>
+
+         <!-- <div class="row p-xl-4">
+            {% for client in clients %}
+            <div class="col-md-6 col-lg-3 pt-3 pb-3 ps-xl-3 -pe-xl-3" id="{{client.id}}">
+               <div class="rounded-3 el-bg-grids p-3 ps-5 pe-5 el-card-grids">
+                  <div class="w-100 text-end dropstart pb-2">
+                     <i class="fa-solid fa-ellipsis el-font-s-1 el-cursor-pointer" data-bs-toggle="dropdown"
+                        aria-expanded="false"></i>
+                     <ul class="dropdown-menu dropdown-menu-end el-bg-grids">
+                        <li><a class="dropdown-item el-font-xs-3" href="#"> <i class="fa-solid fa-eye"></i> View</a>
+                        </li>
+                        <li><a class="dropdown-item el-font-xs-3" href="#"> <i class="fa-solid fa-pen-to-square"></i>
+                              Edit</a></li>
+                        <li><a class="dropdown-item el-font-xs-3" href="#"> <i class="fa-solid fa-trash"></i> Delete</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="w-100 d-flex justify-content-center pb-2">
+                     {% if client.client_logo==None %}
+                     <p
+                        class="d-flex align-items-center justify-content-center el-rounded-full el-border-s-1 text-center bg-white el-font-s-3 fw-bold el-text-bl-1">
+                        {{client.name[:2].upper()}}
+                     </p>
+                     {% else %}
+                     <img src="{{client.client_logo}}" class="img-fluid el-rounded-full el-border-s-1"
+                        alt="client logo"> {% endif %}
+                  </div>
+                  <div class="text-center el-font-s-1 el-card-grids">
+                     <p> {{ client.name }} </p>
+                     <p class="el-font-xs-2 el-text-gr-1"> has 1 rep(s) </p>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6 text-center text-md-start pb-2">
+                        <a {% if client.phone_number==None %} data-bs-toggle="tooltip" data-bs-placement="top"
+                           data-bs-custom-class="custom-tooltip" data-bs-title="No Phone Number" {% else %}
+                           data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                           data-bs-title={{client.phone_number}} href="tel:{{client.phone_number}}" {% endif %}
+                           class="text-white el-cursor-pointer el-font-xs-2"><i
+                              class="fa-solid fa-phone el-font-xs-2"></i> Call
+                        </a>
+                     </div>
+                     <div class="col-md-6 text-center text-md-end pb-2">
+                        <a {% if client.phone_number==None %} data-bs-toggle="tooltip" data-bs-placement="top"
+                           data-bs-custom-class="custom-tooltip" data-bs-title="No Email Address" {% else %}
+                           data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                           data-bs-title={{client.email_address}} href="mailto:{{client.email_address}}" {% endif %}
+                           class="text-white el-cursor-pointer el-font-xs-2"><i
+                              class="fa-solid fa-envelope el-font-xs-2"></i> Email
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div> -->
+
+      </div>
+   </div>
+</div>
+
+{% endblock %}
