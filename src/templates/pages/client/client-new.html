@@ -1,0 +1,38 @@
+{% extends 'layouts/page.html' %}
+
+{% block title %} Add a new client - Easy Ledger {% endblock %}
+
+{% block active_nav_link_2 %}active-nav-link{% endblock %}
+
+{% block content %}
+
+<div>
+
+   <div class="container-fluid pt-2">
+
+      <!-- Add a new client -->
+
+      <div class="p-4">
+
+         <div class="row">
+            <div class="col-4">
+               <p class="text-center el-font-s-3 fw-bold el-bg-pills p-2 el-letter-sp-1 sticky-top"> Clients </p>
+               {% for client in clients %}
+               <p class="ps-4">
+                  {{ loop.index }}. {{client.name}}
+               </p>
+               {% endfor %}
+
+            </div>
+
+            <div class="col-6">
+
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+</div>
+
+{% endblock %}
