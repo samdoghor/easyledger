@@ -37,3 +37,11 @@ class ClientResource:
 
         return render_template('pages/client/client-list.html',
                                clients=clients)
+
+    def client_add_new():
+        """ Add a new client """
+
+        clients = Client.query.order_by(Client.name.asc()).all()
+
+        return render_template('pages/client/client-new.html',
+                               clients=clients)
